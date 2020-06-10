@@ -5,11 +5,12 @@ import java.util.Calendar;
 
 public class Main {
     public static void main(String[] args){
-        //Conta pessoa = new Conta("Eduardo Gonçalves", "056.765.191-6", 1);
-           
-                int nContas = 0;
+          int nContas = 0;
         Conta pessoa1 = new Conta();
-        nContas = nContas + 1;
+        nContas++;
+        //Conta pessoa = new Conta("Eduardo Gonçalves", "056.765.191-6", nContas);
+       
+        
         
         pessoa1.setNome("Puta");
         pessoa1.setCpf("056.165.754-05");
