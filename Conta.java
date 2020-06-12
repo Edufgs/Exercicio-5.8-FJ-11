@@ -1,25 +1,28 @@
 package Conta;
 
+import Conta.Data;
+        
 public class Conta {
- 
+    
+    private static int totalContas;
     private String nome;
     private String cpf;
     private String agencia;
     private double saldo;
-    private int dia;
-    private int mes;
-    private int ano;
+    private Data data;
     private int identificador;
     
-    public Conta (String nome, String cpf, int identificador, String agencia, double saldo){
+    public Conta (String nome, String cpf, String agencia, double saldo, int dia, int mes, int ano){
         this.nome = nome;
         this.cpf = cpf;
-        this.identificador = identificador;
+        this.identificador = totalContas++;
         this.agencia = agencia;
         this.saldo = 0;
+        this.data.setData(dia, mes, ano);
     }
     
     public Conta(){
+        this.identificador = totalContas++;
         
     }
         
@@ -34,6 +37,10 @@ public class Conta {
     }
     
     //setters
+    public void setDate(int dia, int mes, int ano) {
+        this.data.setData(dia, mes, ano);
+    }
+    
       public void setNome(String nome){
         this.nome = nome;
         this.saldo = 0;
@@ -45,40 +52,6 @@ public class Conta {
     
     public void setAgencia(String agencia){
         this.agencia = agencia;
-    }
-    
-    public void setIdentificador(int identificador){
-        this.identificador = identificador;
-    }
-    
-    public boolean setData(int dia, int mes, int ano){
-        
-        if (dia> 31) {
-            return false;
-        }
-        if (mes> 12) {
-            return false;
-        }
-        if (((mes == 4) || (mes == 6) || (mes == 9) || (mes == 11)) && (dia > 30)) {
-            return false;
-        }
-        if (mes == 2) {
-            
-            if((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0))){
-			if(dia > 29){
-                            return false;
-                        }
-            }
-            else{
-                if(dia > 28){
-                    return false;
-                }
-            }            
-        }
-        this.dia = dia;
-        this.mes = mes;
-        this.ano  = ano;
-        return true;
     }
     
     //getters
@@ -99,17 +72,17 @@ public class Conta {
         return identificador;
     }
     
-    public int getDia(){
-        return dia;
-    }  
-    
-    public int geMes(){
-        return mes;
+    public int getDia() {
+        return data.getDia();
     }
-    
-    public int getAno(){
-        return ano;
+
+    public int getMes() {
+        return data.getMes();
     }
+
+    public int getAno() {
+        return data.getAno();
+    }    
 }
 
     
