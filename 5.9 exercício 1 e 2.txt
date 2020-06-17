@@ -1,1 +1,0 @@
-1 - Não compila porque foi declarado a variavel 'x' fora do main.
