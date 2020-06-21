@@ -13,6 +13,7 @@ public class Conta {
     private String nome;
     private String cpf;
     private String agencia;
+    private int numero;
     private double saldo;
     private Data data;
     private int identificador;
@@ -47,7 +48,7 @@ public class Conta {
          data = new Data(dia,mes,ano);
     }
     
-      public void setNome(String nome){
+      public void setTitular(String nome){
         this.nome = nome;
         this.saldo = 0;
     }
@@ -59,6 +60,11 @@ public class Conta {
     public void setAgencia(String agencia){
         this.agencia = agencia;
     }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
     
     //getters
      public double getRendimento(){
@@ -66,7 +72,7 @@ public class Conta {
         return this.saldo; 
     }
      
-    public String getNome(){
+    public String getTitular(){
         return this.nome;
     }
     
@@ -91,6 +97,10 @@ public class Conta {
     }    
     public String getAgencia(){
         return agencia;
+    }
+    
+    public int getNumero() {
+        return numero;
     }
 
     public double getSaldo() {
