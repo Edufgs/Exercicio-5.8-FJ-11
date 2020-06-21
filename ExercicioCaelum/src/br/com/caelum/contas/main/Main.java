@@ -2,7 +2,10 @@ package br.com.caelum.contas.main;
 
 import br.com.caelum.contas.modelo.Conta;
 
-
+/**
+ * Teste a criação das contas
+ * @author Eduardo Gonçalves da Silva
+ */
 public class Main {
     public static void main(String[] args){
         Conta pessoa1 = new Conta("Eduardo Gonçalves", "056.765.191-6", "25546-5", 16, 6, 2000);

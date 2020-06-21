@@ -1,4 +1,9 @@
 package data;
+/**
+* Classe responsável por guardar e verificar a data
+*
+* @author Eduardo Gonçalves da SIlva
+*/
 
 
 public class Data {
@@ -18,7 +23,12 @@ public class Data {
         return ano;
     }
 
-    
+    /**
+     * Guarda o dia, mes e ano
+     * @param dia
+     * @param mes
+     * @param ano 
+     */
    public Data(int dia, int mes, int ano){
         
         if (dia> 31) {

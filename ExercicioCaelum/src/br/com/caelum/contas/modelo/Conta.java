@@ -2,6 +2,11 @@ package br.com.caelum.contas.modelo;
         
 import data.Data;
 
+/**
+* Classe responsável por moldar a Conta
+*
+* @author Eduardo Gonçalves da SIlva
+*/
 public class Conta {
     
     private static int totalContas = 0;
