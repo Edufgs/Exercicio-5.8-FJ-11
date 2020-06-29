@@ -14,7 +14,7 @@ public class Conta {
     private String cpf;
     private String agencia;
     private int numero;
-    private double saldo;
+    protected double saldo;
     private Data data;
     private int identificador;
     
@@ -33,14 +33,19 @@ public class Conta {
         
     }
         
-    public void sacar(double valor){
+    public void saca(double valor){
 	this.saldo -= valor;
 	System.out.println("Saque:"+valor+ "  ContaAtural:"+this.saldo);
     }
 
-    public void depositar(double valor){
+    public void deposita(double valor){
         this.saldo += valor;
 	System.out.println("Depositado: "+valor);
+    }
+    
+    public void transfere(double valor, Conta conta){
+        this.saca(valor);
+        conta.deposita(valor);
     }
     
     //setters
@@ -64,7 +69,6 @@ public class Conta {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
     
     //getters
      public double getRendimento(){
@@ -110,7 +114,6 @@ public class Conta {
     public static int getTotalContas() {
         return totalContas;
     }
-    
 }
 
     
